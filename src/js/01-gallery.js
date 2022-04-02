@@ -1,15 +1,12 @@
-
 import SimpleLightbox from "simplelightbox";
-
 import "simplelightbox/dist/simple-lightbox.min.css";
-
 import { galleryItems } from './gallery-items';
 
-
 console.log(galleryItems);
+
 const galleryContainer = document.querySelector('.gallery');
 
-function createGallery(galleryItems){
+const  createGallery = (galleryItems) => {
 return galleryItems.map(el => {
     return `<div class="gallery__item">
     <a class="gallery__link"
@@ -29,6 +26,5 @@ console.log(galleryContainer);
 
 const gallery = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
-    captionDelay: '250ms',
+    captionDelay: '300ms',
  });
-console.log(gallery);
