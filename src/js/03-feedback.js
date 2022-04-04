@@ -19,18 +19,15 @@ function onFormSubmit (e) {
     e.currentTarget.reset();
     console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
     localStorage.removeItem(LOCALSTORAGE_KEY);
+    data = {};
 };
 function savedDataOutput () {
     const savedDataForm = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-     switch (true) {
-        case savedDataForm?.email:
-            form.email.value = savedDataForm.email;
-            break;
-        case savedDataForm?.message:
-            form.message.value = savedDataForm.message;
-            break;
-        default:
-            break;
-    }
+if(savedDataForm?.email){
+    form.email.value = savedDataForm.email; 
+}
+if(savedDataForm?.message){
+    form.message.value = savedDataForm.message;
+}
 };
 savedDataOutput();
