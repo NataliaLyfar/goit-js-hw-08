@@ -23,4 +23,4 @@ const onFormSubmit = (e) => {
 };
 
 form.addEventListener('input', onInputDataSave);
-form.addEventListener('submit', throttle(onFormSubmit, 500);
+form.addEventListener('submit', throttle(onFormSubmit, 500));
