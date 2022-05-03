@@ -4,11 +4,13 @@ const form = document.querySelector('.feedback-form');
 const LOCALSTORAGE_KEY = "feedback-form-state";
 let data = {};
 console.log(form);
-
+savedDataOutput();
 const onInputDataSave = (e) => {
     data[e.target.name] = e.target.value;
     const storageDate = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+  
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify({ ...storageDate, ...data }));
+    
 };
 
 const onFormSubmit = (e) => {
@@ -21,6 +23,7 @@ const onFormSubmit = (e) => {
         console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
         localStorage.removeItem(LOCALSTORAGE_KEY);
         data = {};
+        savedDataOutput();
 };
 
 function savedDataOutput () {
@@ -30,5 +33,5 @@ function savedDataOutput () {
 
 form.addEventListener('input', throttle(onInputDataSave,500));
 form.addEventListener('submit', onFormSubmit);
-savedDataOutput();
+
 
