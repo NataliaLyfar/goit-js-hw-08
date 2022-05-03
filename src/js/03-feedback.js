@@ -14,12 +14,15 @@ const onInputDataSave = (e) => {
 
 const onFormSubmit = (e) => {
     e.preventDefault(); 
-    const { email, message } = e.currentTarget.elements;
-    console.log({ email, message });
+    const formElements = e.currentTarget.elements;
+    const email = formElements.email.value;
+    const message = formElements.message.value;
+
+    const  formData = { email, message };
+    console.log(formData);
     
     localStorage.removeItem(LOCALSTORAGE_KEY);
     e.currentTarget.reset();
-
 };
 
 form.addEventListener('input', onInputDataSave);
