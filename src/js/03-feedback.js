@@ -29,10 +29,10 @@ const LOCALSTORAGE_KEY = "feedback-form-state";
 //     Object.keys(savedDataForm || {}).forEach((item) => form[item].value = savedDataForm[item]);
 // };
 // II variant
-const data = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) ?? {};
+const data = (JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY))) ?? {};
 
-form.elements.email.value = data.email ?? '';
-form.elements.message.value = data.message ?? '';
+form.elements.email.value = (data.email) ?? '';
+form.elements.message.value =( data.message) ?? '';
 
 const onInputDataSave = e => {
   data[e.target.name] = e.target.value;
