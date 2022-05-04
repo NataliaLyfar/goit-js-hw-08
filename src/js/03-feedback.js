@@ -41,7 +41,10 @@ const onInputDataSave = e => {
 
 const onFormSubmit = e => {
   e.preventDefault();
-
+  if (form.elements.email.value == '' || form.elements.message.value == '') {
+            alert('Error, all fields must be filled!!');
+            return;
+        } 
   const formElements = e.currentTarget.elements;
   const email = formElements.email.value;
   const message = formElements.message.value;
