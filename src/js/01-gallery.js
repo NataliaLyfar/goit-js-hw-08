@@ -2,12 +2,11 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import { galleryItems } from './gallery-items';
 
-console.log(galleryItems);
-
 const galleryContainer = document.querySelector('.gallery');
 
 const  createGallery = (galleryItems) => {
 return galleryItems.map(el => {
+  // const { original, preview, description } = element;
     return `<div class="gallery__item">
     <a class="gallery__link"
      href="${el.original}">
@@ -22,7 +21,6 @@ return galleryItems.map(el => {
 }).join('');}
 
 galleryContainer.insertAdjacentHTML('beforeend', createGallery(galleryItems));
-console.log(galleryContainer);
 
 const gallery = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
